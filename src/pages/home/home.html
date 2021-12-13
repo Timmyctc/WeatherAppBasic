@@ -1,14 +1,43 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+  <ion-toolbar>
+    <!-- <button ion-button menuToggle (click) = "openSideMenu()">
+      <ion-icon name="menu"></ion-icon>
+    </button> -->
+    <ion-title>{{studentNumber}}</ion-title>
+      
+      <ion-buttons end>
+        <button (click)="goToSettings()">
+        <ion-icon name="settings"></ion-icon>
+      </button>
+      </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v3">docs</a> will be your guide.
-  </p>
+<ion-content>
+<ion-card>
+  <ion-card-header>
+    <img src= "assets/ghost.jpg" alt="Ghost Logo">
+    <ion-card-title>Ghostman Weather</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <p>At Ghostman Weather we are committed to giving you the spookiest 
+      weather reports in the world.
+      {{this.weather}}
+
+      
+    </p>
+    <li *ngFor="let weather of weatherInfo;">
+      {{weather.length}}. {{user}} 
+    </li>
+  </ion-card-content>
+
+  <ion-card-content>
+    <p>
+      <button ion-button color="primary" (click)="displayThings()">
+        Display
+      </button>
+    </p>
+  </ion-card-content>
+</ion-card>
 </ion-content>
