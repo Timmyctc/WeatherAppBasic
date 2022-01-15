@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>News</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding [hidden] = noNews>
+  <ion-list>
+    <ion-item>
+      <p [hidden] = !noNews>No News for {{this.cca2}} </p>
+    </ion-item>
+    <ion-item *ngFor="let n of News.articles">
+      <img [src]="n.urlToImage" width="10%" height="10%">
+      <ion-card-title><a href={{n.url}}>{{n.title}}</a></ion-card-title>
+      <h2><a href={{n.url}}>>{{n.description}}</a></h2>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,4 +1,3 @@
-
 <ion-header>
   <ion-navbar>
     <ion-title>{{title}}</ion-title>
@@ -8,41 +7,42 @@
 
 <!-- //------------------------------------City Search Box--------------------------------------// -->
 <ion-card>
-  <ion-card-header>
-    Search City
+  <ion-card-header class="content">
+    <ion-card-subtitle>Search for a city</ion-card-subtitle>
   </ion-card-header>
-  <ion-card-content padding>
-    <h2>Selected City: {{loadedCity}}</h2>
-<ion-input type="text" class="form-control" [(ngModel)]="cityName" placeholder="Search for a city"></ion-input>
-    </ion-card-content>
+
+  <ion-input type="text" class="form-control" [(ngModel)]="cityName"></ion-input>
 </ion-card>
 <!-- -----------------------------------------City Search Box---------------------------------------- -->
- 
-  <ion-card>
-    <ion-card-header>
-      Units: {{units}}
-    </ion-card-header>
-    <ion-card-content padding>
-      <ion-list radio-group [(ngModel)]="units">
-        <ion-list-header>
-          Measurements:
-        </ion-list-header>
-        <ion-item>
-          <ion-label>Scientific</ion-label>
-          <ion-radio value="S"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label>Metric</ion-label>
-          <ion-radio value="M"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label>Fahrenheit</ion-label>
-          <ion-radio value="I"></ion-radio>
-        </ion-item>
-      </ion-list>
-      </ion-card-content> 
-      <ion-button>
-        <button ion-button color="primary" (click)="saveSettings()" [disabled]= "!cityName || !units">Save</button>
-      </ion-button>
-    </ion-card>
-  
+
+<!-- //======================================================================================================= -->
+
+
+
+<ion-card>
+  <ion-card-header>
+    Units:
+  </ion-card-header>
+  <ion-card-content padding>
+    <ion-list radio-group [(ngModel)]="units">
+      <ion-list-header>
+        Measurements:
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Scientific</ion-label>
+        <ion-radio value="S"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Metric</ion-label>
+        <ion-radio value="M"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Fahrenheit</ion-label>
+        <ion-radio value="I"></ion-radio>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+  <ion-button>
+    <button ion-button color="primary" (click)="saveSettings()" [disabled]="!cityName || !units">Save</button>
+  </ion-button>
+</ion-card>
